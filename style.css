@@ -262,3 +262,26 @@ footer{border-top:1px solid rgba(255,255,255,.1); padding:64px 24px;}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important; animation-iteration-count:1!important; transition-duration:.001ms!important;}
 }
+
+
+    /* ===== Live static-host fallbacks ===== */
+    @media (hover:hover) and (pointer:fine){
+    body{cursor:none;}
+    a,button,input,select,textarea{cursor:none;}
+    }
+    @media (hover:none), (pointer:coarse){
+    body{cursor:auto;}
+    .cursor-dot,.cursor-ring{display:none;}
+    }
+    .navbar-inner{
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(16px);
+    -webkit-backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.08);
+    margin:0 16px;
+    padding:12px 24px;
+    }
+    @media(min-width:768px){
+    .navbar-inner{margin:0 40px; padding:12px 40px;}
+    }
+    
