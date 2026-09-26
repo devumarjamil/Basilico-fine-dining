@@ -243,63 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
   gsap.ticker.lagSmoothing(0);
   window.lenis = lenis;
 
-  /* ===== Navbar scroll state ===== */
-  var navbar = document.getElementById("navbar");
-  function onScroll() {
-    if (window.scrollY > 24) navbar.classList.add("scrolled");
-    else navbar.classList.remove("scrolled");
-  }
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  /* ===== Mobile menu ===== */
-  var mobileToggle = document.getElementById("mobileToggle");
-  var mobileMenu = document.getElementById("mobileMenu");
-  if (mobileToggle && mobileMenu) mobileToggle.addEventListener("click", function () {
-    mobileToggle.classList.toggle("open");
-    mobileMenu.classList.toggle("open");
-  });
-  if (mobileMenu) mobileMenu.querySelectorAll("a").forEach(function (a) {
-    a.addEventListener("click", function () {
-      mobileToggle.classList.remove("open");
-      mobileMenu.classList.remove("open");
-    });
-  });
-
-  /* ===== Custom cursor ===== */
-  var isCoarse = window.matchMedia("(pointer: coarse)").matches;
-  if (!isCoarse) {
-    var ring = document.getElementById("cursorRing");
-    var dot = document.getElementById("cursorDot");
-    var mouseX = -100, mouseY = -100;
-    var ringX = -100, ringY = -100, dotX = -100, dotY = -100;
-
-    window.addEventListener("mousemove", function (e) {
-      mouseX = e.clientX; mouseY = e.clientY;
-    });
-    window.addEventListener("mouseover", function (e) {
-      if (e.target.closest && e.target.closest("[data-cursor-hover]")) {
-        ring.classList.add("hovering");
-        dot.classList.add("hovering");
-      }
-    });
-    window.addEventListener("mouseout", function (e) {
-      if (e.target.closest && e.target.closest("[data-cursor-hover]")) {
-        ring.classList.remove("hovering");
-        dot.classList.remove("hovering");
-      }
-    });
-    (function tick() {
-      dotX += (mouseX - dotX) * 0.28;
-      dotY += (mouseY - dotY) * 0.28;
-      ringX += (mouseX - ringX) * 0.16;
-      ringY += (mouseY - ringY) * 0.16;
-      dot.style.transform = "translate(" + dotX + "px," + dotY + "px) translate(-50%,-50%)" + (dot.classList.contains("hovering") ? " scale(0)" : "");
-      ring.style.transform = "translate(" + ringX + "px," + ringY + "px) translate(-50%,-50%)";
-      requestAnimationFrame(tick);
-    })();
-  }
-
   /* ===== Hero entrance ===== */
   var heroTl = gsap.timeline({ defaults: { ease: "power4.out" } });
   heroTl.fromTo(".hero-line", { y: 100, opacity: 0 }, { y: 0, opacity: 1, duration: 1.4, stagger: 0.14 })
