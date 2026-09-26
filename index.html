@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Basilico — Crafting Exceptional Culinary Experiences</title>
+<meta name="description" content="Basilico is a fine-dining restaurant helmed by Chef Alexander Thorne, offering a seasonal tasting menu, an award-considered wine cellar, and an intimate dining room." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<template id="emblem-tpl-pasta"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="g-pasta-bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#161311"/>
+      <stop offset="55%" stop-color="#0d0d0d"/>
+      <stop offset="100%" stop-color="#070707"/>
+    </radialGradient>
+    <linearGradient id="g-pasta-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C496"/>
+      <stop offset="50%" stop-color="#D9A35F"/>
+      <stop offset="100%" stop-color="#C97A2B"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="300" height="300" fill="url(#g-pasta-bg)"/>
+  <circle cx="150.0" cy="150.0" r="126.0" fill="none" stroke="url(#g-pasta-gold)" stroke-opacity="0.28" stroke-width="1"/>
+  <circle cx="150.0" cy="150.0" r="96.0" fill="none" stroke="url(#g-pasta-gold)" stroke-opacity="0.16" stroke-width="1"/>
+  <path d="M 155.0 150.0 L 155.5 150.8 L 156.0 151.8 L 156.2 152.9 L 156.2 154.1 L 156.0 155.4 L 155.5 156.7 L 154.7 158.0 L 153.8 159.1 L 152.5 160.2 L 151.0 161.1 L 149.4 161.7 L 147.5 162.1 L 145.6 162.2 L 143.6 161.9 L 141.5 161.3 L 139.5 160.4 L 137.6 159.1 L 135.9 157.4 L 134.3 155.5 L 133.1 153.2 L 132.2 150.7 L 131.7 148.0 L 131.6 145.2 L 131.9 142.3 L 132.7 139.4 L 134.0 136.6 L 135.8 133.9 L 137.9 131.5 L 140.5 129.4 L 143.5 127.6 L 146.8 126.3 L 150.3 125.5 L 154.0 125.2 L 157.8 125.5 L 161.6 126.3 L 165.3 127.8 L 168.8 129.8 L 172.0 132.4 L 174.9 135.6 L 177.3 139.2 L 179.2 143.2 L 180.5 147.5 L 181.2 152.1 L 181.1 156.8 L 180.4 161.5 L 178.9 166.1 L 176.7 170.6 L 173.8 174.7 L 170.2 178.4 L 166.1 181.6 L 161.5 184.2 L 156.4 186.2 L 151.1 187.3 L 145.5 187.7 L 139.8 187.2 L 134.2 185.8 L 128.8 183.6 L 123.7 180.6 L 119.0 176.8 L 114.9 172.3 L 111.4 167.1 L 108.7 161.4 L 106.9 155.3 L 106.0 148.9 L 106.0 142.3 L 107.0 135.7 L 109.1 129.3 L 112.1 123.2 L 116.0 117.4 L 120.8 112.3 L 126.3 107.9 L 132.6 104.3 L 139.3 101.6 L 146.5 100.0 L 154.0 99.4 L 161.5 99.9 L 169.0 101.6 L 176.2 104.4 L 183.0 108.3 L 189.2 113.2 L 194.7 119.0 L 199.3 125.6 L 203.0 133.0 L 205.5 140.9 L 206.8 149.1 L 207.0 157.6 L 205.8 166.0 L 203.4 174.3 L 199.8 182.2 L 194.9 189.6 L 189.0 196.3 L 182.1 202.0 L 174.3 206.7 L 165.9 210.3 L 156.9 212.6 L 147.6 213.5 L 138.2 213.1 L 128.8 211.2 L 119.8 208.0 L 111.2 203.4" fill="none" stroke="url(#g-pasta-gold)" stroke-width="2.4" stroke-linecap="round"/>
+</svg></template>
+<template id="emblem-tpl-wagyu"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="g-wagyu-bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#161311"/>
+      <stop offset="55%" stop-color="#0d0d0d"/>
+      <stop offset="100%" stop-color="#070707"/>
+    </radialGradient>
+    <linearGradient id="g-wagyu-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C496"/>
+      <stop offset="50%" stop-color="#D9A35F"/>
+      <stop offset="100%" stop-color="#C97A2B"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="300" height="300" fill="url(#g-wagyu-bg)"/>
+  <circle cx="150.0" cy="150.0" r="126.0" fill="none" stroke="url(#g-wagyu-gold)" stroke-opacity="0.28" stroke-width="1"/>
+  <circle cx="150.0" cy="150.0" r="96.0" fill="none" stroke="url(#g-wagyu-gold)" stroke-opacity="0.16" stroke-width="1"/>
+  <line x1="108.0" y1="85.0" x2="120.0" y2="113.6" stroke="url(#g-wagyu-gold)" stroke-width="2.6" stroke-linecap="round"/><line x1="120.0" y1="85.0" x2="120.0" y2="113.6" stroke="url(#g-wagyu-gold)" stroke-width="2.6" stroke-linecap="round"/><line x1="132.0" y1="85.0" x2="120.0" y2="113.6" stroke="url(#g-wagyu-gold)" stroke-width="2.6" stroke-linecap="round"/><line x1="120.0" y1="113.6" x2="120.0" y2="215.0" stroke="url(#g-wagyu-gold)" stroke-width="2.6" stroke-linecap="round"/><path d="M 180.0 85.0 C 194.0 98.0 187.0 134.4 180.0 134.4 L 180.0 215.0" fill="none" stroke="url(#g-wagyu-gold)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></template>
+<template id="emblem-tpl-duck"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="g-duck-bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#161311"/>
+      <stop offset="55%" stop-color="#0d0d0d"/>
+      <stop offset="100%" stop-color="#070707"/>
+    </radialGradient>
+    <linearGradient id="g-duck-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C496"/>
+      <stop offset="50%" stop-color="#D9A35F"/>
+      <stop offset="100%" stop-color="#C97A2B"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="300" height="300" fill="url(#g-duck-bg)"/>
+  <circle cx="150.0" cy="150.0" r="126.0" fill="none" stroke="url(#g-duck-gold)" stroke-opacity="0.28" stroke-width="1"/>
+  <circle cx="150.0" cy="150.0" r="96.0" fill="none" stroke="url(#g-duck-gold)" stroke-opacity="0.16" stroke-width="1"/>
+  <path d="M 96 130 Q 150 98 204 130" fill="none" stroke="url(#g-duck-gold)" stroke-width="2" stroke-linecap="round" stroke-opacity="0.85"/><circle cx="201.7" cy="141.7" r="4.2" fill="url(#g-duck-gold)"/><circle cx="180.3" cy="118.5" r="4.2" fill="url(#g-duck-gold)"/><circle cx="150.0" cy="110.0" r="4.2" fill="url(#g-duck-gold)"/><circle cx="119.7" cy="118.5" r="4.2" fill="url(#g-duck-gold)"/><circle cx="98.3" cy="141.7" r="4.2" fill="url(#g-duck-gold)"/>
+</svg></template>
+<template id="emblem-tpl-brulee"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="g-brulee-bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#161311"/>
+      <stop offset="55%" stop-color="#0d0d0d"/>
+      <stop offset="100%" stop-color="#070707"/>
+    </radialGradient>
+    <linearGradient id="g-brulee-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C496"/>
+      <stop offset="50%" stop-color="#D9A35F"/>
+      <stop offset="100%" stop-color="#C97A2B"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="300" height="300" fill="url(#g-brulee-bg)"/>
+  <circle cx="150.0" cy="150.0" r="126.0" fill="none" stroke="url(#g-brulee-gold)" stroke-opacity="0.28" stroke-width="1"/>
+  <circle cx="150.0" cy="150.0" r="96.0" fill="none" stroke="url(#g-brulee-gold)" stroke-opacity="0.16" stroke-width="1"/>
+  <circle cx="150" cy="150" r="62" fill="none" stroke="url(#g-brulee-gold)" stroke-width="2" stroke-opacity="0.9"/><path d="M 95.0 155.0 L 107.2 145.0 L 119.4 155.0 L 131.7 145.0 L 143.9 155.0 L 156.1 145.0 L 168.3 155.0 L 180.6 145.0 L 192.8 155.0 L 205.0 145.0" fill="none" stroke="url(#g-brulee-gold)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M 150.0 80.0 C 158.8 93.6 156.4 104.8 150.0 105.6 C 143.6 104.8 141.2 93.6 150.0 80.0 Z" fill="url(#g-brulee-gold)" fill-opacity="0.85"/>
+</svg></template>
+<template id="emblem-tpl-glass"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="g-glass-bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#161311"/>
+      <stop offset="55%" stop-color="#0d0d0d"/>
+      <stop offset="100%" stop-color="#070707"/>
+    </radialGradient>
+    <linearGradient id="g-glass-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C496"/>
+      <stop offset="50%" stop-color="#D9A35F"/>
+      <stop offset="100%" stop-color="#C97A2B"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="300" height="300" fill="url(#g-glass-bg)"/>
+  <circle cx="150.0" cy="150.0" r="126.0" fill="none" stroke="url(#g-glass-gold)" stroke-opacity="0.28" stroke-width="1"/>
+  <circle cx="150.0" cy="150.0" r="96.0" fill="none" stroke="url(#g-glass-gold)" stroke-opacity="0.16" stroke-width="1"/>
+  <path d="M 150.0 205.0 L 204.6 205.0 L 204.6 201.4 L 160.7 196.7 L 157.7 136.1 L 153.8 131.4 L 153.8 126.6 L 209.4 110.0 L 218.9 64.9 L 209.4 24.5 L 197.5 15.0 L 102.5 15.0 L 90.6 24.5 L 81.1 64.9 L 90.6 110.0 L 146.2 126.6 L 146.2 131.4 L 142.3 136.1 L 139.3 196.7 L 95.4 201.4 L 95.4 205.0 L 150.0 205.0 Z" fill="url(#g-glass-gold)" fill-opacity="0.16" stroke="url(#g-glass-gold)" stroke-width="1.8"/>
+</svg></template>
+<template id="emblem-tpl-leaf"><svg viewBox="0 0 300 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" class="emblem-svg" role="img" aria-hidden="true">
+  <defs>
+    <radialGradient id="g-leaf-bg" cx="50%" cy="38%" r="75%">
+      <stop offset="0%" stop-color="#161311"/>
+      <stop offset="55%" stop-color="#0d0d0d"/>
+      <stop offset="100%" stop-color="#070707"/>
+    </radialGradient>
+    <linearGradient id="g-leaf-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E8C496"/>
+      <stop offset="50%" stop-color="#D9A35F"/>
+      <stop offset="100%" stop-color="#C97A2B"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="300" height="300" fill="url(#g-leaf-bg)"/>
+  <circle cx="150.0" cy="150.0" r="126.0" fill="none" stroke="url(#g-leaf-gold)" stroke-opacity="0.28" stroke-width="1"/>
+  <circle cx="150.0" cy="150.0" r="96.0" fill="none" stroke="url(#g-leaf-gold)" stroke-opacity="0.16" stroke-width="1"/>
+  <line x1="150" y1="195" x2="150" y2="225" stroke="url(#g-leaf-gold)" stroke-width="2"/><path d="M 150.0 195.0 C 150.0 172.4 124.3 150.1 112.1 140.9 C 116.6 155.5 128.8 187.3 150.0 195.0 Z" fill="url(#g-leaf-gold)" fill-opacity="0.55" stroke="url(#g-leaf-gold)" stroke-width="1"/><path d="M 150.0 195.0 C 171.2 187.3 183.4 155.5 187.9 140.9 C 175.7 150.1 150.0 172.4 150.0 195.0 Z" fill="url(#g-leaf-gold)" fill-opacity="0.55" stroke="url(#g-leaf-gold)" stroke-width="1"/><path d="M 150.0 195.0 C 165.0 173.2 155.4 134.2 150.0 117.0 C 144.6 134.2 135.0 173.2 150.0 195.0 Z" fill="url(#g-leaf-gold)" fill-opacity="0.85" stroke="url(#g-leaf-gold)" stroke-width="1"/>
+</svg></template>
+
+
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<header class="navbar" id="navbar">
+  <div class="navbar-inner" id="navbarInner">
+    <a href="#top" class="logo" data-cursor-hover>Basilico</a>
+    <ul class="nav-links">
+      <li><a href="#dishes" data-cursor-hover>Menu</a></li>
+      <li><a href="#about" data-cursor-hover>About</a></li>
+      <li><a href="#tasting" data-cursor-hover>Tasting</a></li>
+      <li><a href="#experience" data-cursor-hover>Cellar</a></li>
+      <li><a href="#gallery" data-cursor-hover>Gallery</a></li>
+      <li><a href="#reservations" data-cursor-hover>Contact</a></li>
+    </ul>
+    <a href="#reservations" class="reserve-btn" data-cursor-hover>Reserve Table</a>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#dishes">Menu</a>
+    <a href="#about">About</a>
+    <a href="#tasting">Tasting</a>
+    <a href="#experience">Cellar</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reservations">Contact</a>
+    <a href="#reservations" class="reserve-btn">Reserve Table</a>
+  </div>
+</header>
+
+<main class="container">
+
+<section id="top" class="hero">
+  <div class="hero-bg-1"></div>
+  <div class="hero-bg-2"></div>
+  <div class="hero-bg-3"></div>
+  <div id="hero-canvas-wrap"></div>
+
+  <div class="hero-grid">
+    <div>
+      <h1>
+        <span class="hero-line">Crafting</span>
+        <span class="hero-line gold-text">Exceptional</span>
+        <span class="hero-line">Culinary Experiences</span>
+      </h1>
+      <p class="sub hero-sub">An intimate dining room in the heart of the city, where Chef Alexander Thorne builds each seasonal menu around a single herb garden and a cellar three decades in the making.</p>
+      <div class="hero-ctas">
+        <a href="#reservations" class="btn-primary hero-cta" data-cursor-hover>Reserve a Table</a>
+        <a href="#dishes" class="btn-link hero-cta" data-cursor-hover>View the Menu</a>
+      </div>
+    </div>
+
+    <div class="hero-card-wrap hero-card-anim">
+      <div class="hero-card glass-panel glow-gold" id="heroCard">
+        <div class="hero-card-img"><img src="https://images.pexels.com/photos/32116110/pexels-photo-32116110/free-photo-of-delicious-pesto-pasta-with-cherry-tomatoes.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Basil &amp; Pine Nut Tagliolini" loading="lazy" decoding="async" onerror="emblemFallback(this,'pasta')" /></div>
+        <div class="hero-card-overlay"></div>
+        <div class="hero-card-tag glass-panel">
+          <p class="label">Chef's Special</p>
+          <p class="name">Basil &amp; Pine Nut Tagliolini</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="dishes" class="dishes">
+  <div class="dishes-header dish-heading">
+    <div>
+      <p class="eyebrow">The Menu</p>
+      <h2>Signature Dishes</h2>
+    </div>
+    <button class="btn-outline" id="openMenuBtn" data-cursor-hover>View Full Menu</button>
+  </div>
+
+  <div class="dish-grid">
+    <div class="dish-card">
+      <div class="dish-card-img">
+        <img src="https://images.pexels.com/photos/32116110/pexels-photo-32116110/free-photo-of-delicious-pesto-pasta-with-cherry-tomatoes.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Basil &amp; Pine Nut Tagliolini" loading="lazy" decoding="async" onerror="emblemFallback(this,'pasta')" />
+      </div>
+      <div class="dish-card-info"><h3>Basil &amp; Pine Nut Tagliolini</h3><span class="price">$34</span></div>
+      <p class="dish-card-desc">Hand-cut tagliolini, garden basil pesto, confit cherry tomato, aged pecorino.</p>
+    </div>
+    <div class="dish-card">
+      <div class="dish-card-img">
+        <img src="https://images.pexels.com/photos/299348/pexels-photo-299348.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Seared Wagyu Sirloin" loading="lazy" decoding="async" onerror="emblemFallback(this,'wagyu')" />
+      </div>
+      <div class="dish-card-info"><h3>Seared Wagyu Sirloin</h3><span class="price">$68</span></div>
+      <p class="dish-card-desc">Grade A5 wagyu, charred heirloom vegetables, bordelaise, micro herbs.</p>
+    </div>
+    <div class="dish-card">
+      <div class="dish-card-img">
+        <img src="https://images.pexels.com/photos/1307658/pexels-photo-1307658.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Crisp Duck Breast" loading="lazy" decoding="async" onerror="emblemFallback(this,'duck')" />
+      </div>
+      <div class="dish-card-info"><h3>Crisp Duck Breast</h3><span class="price">$46</span></div>
+      <p class="dish-card-desc">Five-spice duck breast, charred broccolini, cherry gastrique, jus.</p>
+    </div>
+    <div class="dish-card">
+      <div class="dish-card-img">
+        <img src="https://images.pexels.com/photos/32084630/pexels-photo-32084630/free-photo-of-elegant-creme-brulee-dessert-presentation.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Espresso &amp; Dark Chocolate Br&ucirc;l&eacute;e" loading="lazy" decoding="async" onerror="emblemFallback(this,'brulee')" />
+      </div>
+      <div class="dish-card-info"><h3>Espresso &amp; Dark Chocolate Br&ucirc;l&eacute;e</h3><span class="price">$18</span></div>
+      <p class="dish-card-desc">Torched vanilla custard, espresso crackle, candied hazelnut, gold leaf.</p>
+    </div>
+  </div>
+</section>
+
+<div class="menu-modal" id="menuModal" role="dialog" aria-modal="true" aria-label="Full menu">
+  <div class="menu-modal-backdrop" id="menuModalBackdrop"></div>
+  <div class="menu-modal-panel glass-panel glow-gold">
+    <button class="menu-modal-close" id="menuModalClose" aria-label="Close menu" data-cursor-hover>&times;</button>
+    <p class="eyebrow">Basilico</p>
+    <h3>The Full Menu</h3>
+
+    <div class="menu-category">
+      <h4>Starters</h4>
+      <ul>
+        <li><span class="item-name">Burrata, Heirloom Tomato, Basil Oil</span><span class="dash"></span><span class="item-price">$21</span></li>
+        <li><span class="item-name">Hokkaido Scallop Crudo, Yuzu, Chili Oil</span><span class="dash"></span><span class="item-price">$26</span></li>
+        <li><span class="item-name">Charred Octopus, Smoked Paprika, White Bean</span><span class="dash"></span><span class="item-price">$24</span></li>
+        <li><span class="item-name">Wild Mushroom Arancini, Truffle Aioli</span><span class="dash"></span><span class="item-price">$19</span></li>
+        <li><span class="item-name">Foie Gras Torchon, Fig, Brioche</span><span class="dash"></span><span class="item-price">$29</span></li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <h4>Mains</h4>
+      <ul>
+        <li><span class="item-name">Basil &amp; Pine Nut Tagliolini</span><span class="dash"></span><span class="item-price">$34</span></li>
+        <li><span class="item-name">Seared Wagyu Sirloin, Bordelaise</span><span class="dash"></span><span class="item-price">$68</span></li>
+        <li><span class="item-name">Crisp Duck Breast, Cherry Gastrique</span><span class="dash"></span><span class="item-price">$46</span></li>
+        <li><span class="item-name">Roasted Halibut, Saffron Beurre Blanc</span><span class="dash"></span><span class="item-price">$42</span></li>
+        <li><span class="item-name">Porcini Risotto, Aged Parmesan</span><span class="dash"></span><span class="item-price">$32</span></li>
+        <li><span class="item-name">Dry-Aged Ribeye for Two, Bone Marrow</span><span class="dash"></span><span class="item-price">$96</span></li>
+      </ul>
+    </div>
+
+    <div class="menu-category">
+      <h4>Desserts</h4>
+      <ul>
+        <li><span class="item-name">Espresso &amp; Dark Chocolate Br&ucirc;l&eacute;e</span><span class="dash"></span><span class="item-price">$18</span></li>
+        <li><span class="item-name">Pistachio &amp; Raspberry Torte</span><span class="dash"></span><span class="item-price">$16</span></li>
+        <li><span class="item-name">Basil Panna Cotta, Citrus Gel</span><span class="dash"></span><span class="item-price">$15</span></li>
+        <li><span class="item-name">Affogato, Vin Santo</span><span class="dash"></span><span class="item-price">$14</span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section id="about" class="about">
+  <div class="about-text">
+    <p class="eyebrow">Our Philosophy</p>
+    <h2>A single herb garden, a lifetime of restraint.</h2>
+    <p class="body">Chef Alexander Thorne opened Basilico with one rule: nothing reaches the plate that hasn't earned its place. Every menu begins in the rooftop herb garden, where basil is grown in eleven varieties and used the way other kitchens reserve for truffle &mdash; sparingly, and always at the center of the dish.</p>
+    <p class="body">Trained across three Michelin kitchens before returning home, he built Basilico's cellar one vintage at a time and still walks the dining room himself, most nights, before service begins.</p>
+    <p class="signature">Alexander Thorne</p>
+  </div>
+  <div class="about-image">
+    <div class="about-image-inner glass-panel glow-gold">
+      <img src="https://images.pexels.com/photos/32084629/pexels-photo-32084629/free-photo-of-close-up-of-gourmet-chestnut-dessert-preparation.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Chef's hand finishing a plated dish at Basilico" loading="lazy" decoding="async" onerror="emblemFallback(this,'leaf')" />
+    </div>
+  </div>
+</section>
+
+<section id="tasting" class="tasting">
+  <div class="section-heading">
+    <p class="eyebrow">Seven Courses</p>
+    <h2>The Tasting Menu</h2>
+    <p>A single progression built each week around what the garden and the market give us. Wine pairing available by the glass or the full cellar selection.</p>
+  </div>
+  <div class="tasting-grid">
+    <div class="tasting-item"><span class="course">I</span><h3>Amuse-Bouche</h3><p>Chef's daily selection</p></div>
+    <div class="tasting-item"><span class="course">II</span><h3>Basil Panna Cotta</h3><p>Citrus, olive oil, sea salt</p></div>
+    <div class="tasting-item"><span class="course">III</span><h3>Hokkaido Scallop</h3><p>Yuzu, brown butter, chili</p></div>
+    <div class="tasting-item"><span class="course">IV</span><h3>Porcini Risotto</h3><p>Aged parmesan, black truffle</p></div>
+    <div class="tasting-item"><span class="course">V</span><h3>Wagyu Course</h3><p>Bordelaise, root vegetable</p></div>
+    <div class="tasting-item"><span class="course">VI</span><h3>Cheese Selection</h3><p>Curated, three regions</p></div>
+    <div class="tasting-item"><span class="course">VII</span><h3>Espresso Br&ucirc;l&eacute;e</h3><p>Candied hazelnut, gold leaf</p></div>
+  </div>
+  <p class="tasting-price">$155 per guest, with an optional $95 wine pairing</p>
+</section>
+
+<section id="experience" class="experience">
+  <div class="experience-bg">
+    <div id="experienceImg" class="experience-img-emblem"><img src="https://images.pexels.com/photos/4639036/pexels-photo-4639036.jpeg?auto=compress&cs=tinysrgb&w=1800" alt="Basilico's aged wine cellar, rows of bottles in low light" loading="lazy" decoding="async" onerror="emblemFallback(this,'glass')" /></div>
+  </div>
+  <div class="experience-overlay-1"></div>
+  <div class="experience-overlay-2"></div>
+  <div class="experience-content">
+    <div>
+      <p class="eyebrow">The Cellar</p>
+      <h2>Thirty years, one glass at a time.</h2>
+      <p>Below the dining room, over four thousand bottles rest in a hand-cut stone cellar. Private dining for up to twelve is available beside the reserve collection, by request.</p>
+    </div>
+    <div id="glass-canvas-wrap"></div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="testimonials-inner">
+    <p class="eyebrow">In the Press</p>
+    <div class="testimonial-quote-wrap" id="testimonialWrap">
+      <figure class="testimonial-fig active" data-index="0">
+        <blockquote>&ldquo;Every course at Basilico reads like a small, deliberate story &mdash; nothing arrives by accident, and nothing overstays its welcome.&rdquo;</blockquote>
+        <figcaption><span class="name">Isabelle Duran</span>, The Gourmet Standard</figcaption>
+      </figure>
+      <figure class="testimonial-fig" data-index="1">
+        <blockquote>&ldquo;Chef Thorne treats basil the way other kitchens treat truffle: sparingly, precisely, and always at the center of the plate.&rdquo;</blockquote>
+        <figcaption><span class="name">Marcus Feld</span>, Table &amp; Terroir</figcaption>
+      </figure>
+      <figure class="testimonial-fig" data-index="2">
+        <blockquote>&ldquo;The tasting menu builds with real patience. By the fifth course you understand exactly where the kitchen is taking you.&rdquo;</blockquote>
+        <figcaption><span class="name">Priya Anand</span>, Evening Fare Review</figcaption>
+      </figure>
+      <figure class="testimonial-fig" data-index="3">
+        <blockquote>&ldquo;A dining room this quietly confident is rare. The wine list alone is worth the reservation.&rdquo;</blockquote>
+        <figcaption><span class="name">Julien Cros</span>, The Long Table Journal</figcaption>
+      </figure>
+    </div>
+    <div class="testimonial-controls">
+      <button class="testimonial-arrow" id="testimonialPrev" aria-label="Previous testimonial" data-cursor-hover>&lsaquo;</button>
+      <div class="testimonial-dots" id="testimonialDots"></div>
+      <button class="testimonial-arrow" id="testimonialNext" aria-label="Next testimonial" data-cursor-hover>&rsaquo;</button>
+    </div>
+  </div>
+</section>
+
+<section id="reservations" class="reservations">
+  <div class="reservations-glow"></div>
+  <div class="section-heading">
+    <p class="eyebrow">Reservations</p>
+    <h2>Request a Table</h2>
+    <p>Parties larger than twelve, or a private dining inquiry, are welcome by phone.</p>
+  </div>
+
+  <div class="reservations-form-wrap glass-panel glow-gold">
+    <form id="reservationForm">
+      <div class="form-row two">
+        <label>Name<input required type="text" placeholder="Full name" /></label>
+        <label>Email<input required type="email" placeholder="you@email.com" /></label>
+      </div>
+      <div class="form-row three">
+        <label>Date<input required type="date" style="color-scheme:dark;" /></label>
+        <label>Time
+          <select required defaultValue="">
+            <option value="" disabled selected>Select</option>
+            <option>5:30 PM</option><option>6:00 PM</option><option>6:30 PM</option>
+            <option>7:00 PM</option><option>7:30 PM</option><option>8:00 PM</option>
+            <option>8:30 PM</option><option>9:00 PM</option>
+          </select>
+        </label>
+        <label>Guests
+          <select required>
+            <option value="" disabled selected>Select</option>
+            <option>1 Guest</option><option>2 Guests</option><option>3 Guests</option>
+            <option>4 Guests</option><option>5 Guests</option><option>6 Guests</option>
+            <option>7 Guests</option><option>8 Guests</option><option>9 Guests</option>
+            <option>10 Guests</option><option>11 Guests</option><option>12 Guests</option>
+          </select>
+        </label>
+      </div>
+      <label>Special Requests<textarea rows="3" placeholder="Allergies, celebrations, seating preference"></textarea></label>
+      <button type="submit" class="btn-primary" data-cursor-hover>Request Reservation</button>
+    </form>
+
+    <div class="submit-note" id="reservationNote" style="display:none;">
+      <p class="title">Request received</p>
+      <p class="body">Thank you. Our host will confirm your table by email within the hour.</p>
+      <button id="reservationReset" data-cursor-hover>Request another table</button>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery">
+  <div class="section-heading">
+    <p class="eyebrow">Visual Story</p>
+    <h2>Plating, Ingredients, Craft</h2>
+  </div>
+  <div class="gallery-grid">
+    <div class="gallery-item"><img src="https://images.pexels.com/photos/299347/pexels-photo-299347.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Sliced beef, herb butter, natural jus" loading="lazy" decoding="async" onerror="emblemFallback(this,'wagyu')" /><div class="gallery-caption"><p>Sliced beef, herb butter, natural jus</p></div></div>
+    <div class="gallery-item"><img src="https://images.pexels.com/photos/3791089/pexels-photo-3791089.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Duck breast, crisped kale, reduction" loading="lazy" decoding="async" onerror="emblemFallback(this,'duck')" /><div class="gallery-caption"><p>Duck breast, crisped kale, reduction</p></div></div>
+    <div class="gallery-item"><img src="https://images.pexels.com/photos/32099670/pexels-photo-32099670/free-photo-of-delicious-pistachio-cookie-with-fresh-raspberries.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Pistachio, raspberry, white chocolate" loading="lazy" decoding="async" onerror="emblemFallback(this,'brulee')" /><div class="gallery-caption"><p>Pistachio, raspberry, white chocolate</p></div></div>
+    <div class="gallery-item"><img src="https://images.pexels.com/photos/32084577/pexels-photo-32084577/free-photo-of-elegant-gourmet-dish-with-edible-flowers.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Line-caught fish, white bean, edible bloom" loading="lazy" decoding="async" onerror="emblemFallback(this,'leaf')" /><div class="gallery-caption"><p>Line-caught fish, white bean, edible bloom</p></div></div>
+    <div class="gallery-item"><img src="https://images.pexels.com/photos/8697542/pexels-photo-8697542.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Steak dinner, paired reserve wine" loading="lazy" decoding="async" onerror="emblemFallback(this,'glass')" /><div class="gallery-caption"><p>Steak dinner, paired reserve wine</p></div></div>
+    <div class="gallery-item"><img src="https://images.pexels.com/photos/18563182/pexels-photo-18563182/free-photo-of-close-up-of-meet.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Grilled cut, market vegetables" loading="lazy" decoding="async" onerror="emblemFallback(this,'pasta')" /><div class="gallery-caption"><p>Grilled cut, market vegetables</p></div></div>
+    <div class="gallery-item"><img src="https://images.pexels.com/photos/18015000/pexels-photo-18015000/free-photo-of-roasted-beef-with-sauce.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Roasted beef, herb sauce" loading="lazy" decoding="async" onerror="emblemFallback(this,'wagyu')" /><div class="gallery-caption"><p>Roasted beef, herb sauce</p></div></div>
+    <div class="gallery-item"><img src="https://images.pexels.com/photos/32084514/pexels-photo-32084514/free-photo-of-assorted-gourmet-cookies-with-toppings.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Petits fours, service of sweets" loading="lazy" decoding="async" onerror="emblemFallback(this,'leaf')" /><div class="gallery-caption"><p>Petits fours, service of sweets</p></div></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Basilico</h4>
+        <p>An intimate fine-dining room built around one herb garden and a cellar three decades in the making.</p>
+      </div>
+      <div class="footer-col">
+        <p class="eyebrow">Visit</p>
+        <p>214 Laurel Street<br />Riverton District</p>
+      </div>
+      <div class="footer-col">
+        <p class="eyebrow">Contact</p>
+        <p>(555) 019-2847<br />host@basilico-restaurant.com</p>
+      </div>
+      <div class="footer-col">
+        <p class="eyebrow">Stay Informed</p>
+        <form class="newsletter-form" id="newsletterForm">
+          <input required type="email" placeholder="Email address" />
+          <button type="submit" data-cursor-hover>Join</button>
+        </form>
+        <p id="newsletterNote" style="display:none;">You're on the list.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footerYear">&copy; 2026 Basilico. All rights reserved.</p>
+      <p>Open Tuesday through Sunday, from 5:30 PM.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+<script type="module" src="script.js"></script>
