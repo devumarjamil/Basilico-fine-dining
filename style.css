@@ -285,3 +285,9 @@ footer{border-top:1px solid rgba(255,255,255,.1); padding:64px 24px;}
     .navbar-inner{margin:0 40px; padding:12px 40px;}
     }
     
+
+/* ===== True black page background ===== */
+html,body{background:#000000;}
+.hero-bg-1{background:#000000;}
+.hero-bg-2{background:radial-gradient(60% 50% at 50% 50%, transparent 40%, #000000 100%);}
+.hero-bg-3{background:linear-gradient(to right, rgba(0,0,0,.7), transparent 60%);}
