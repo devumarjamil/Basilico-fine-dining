@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+    <title id="title">Basilico</title>
+    <desc id="desc">Basilico restaurant logo</desc>
+    <rect width="64" height="64" rx="16" fill="#070707"/>
+    <rect x="2" y="2" width="60" height="60" rx="14" fill="none" stroke="#D9A35F" stroke-opacity=".7" stroke-width="2"/>
+    <path d="M21 48V16h12.5c7.4 0 11.5 3.7 11.5 9.4 0 3.6-1.8 6.4-5 7.8 4 1.1 6.3 3.9 6.3 7.9 0 5.9-4.4 9-12.3 9H21Zm7-19h5c3.1 0 4.8-1.2 4.8-3.7 0-2.4-1.7-3.5-4.8-3.5h-5V29Zm0 13h5.9c3.4 0 5.2-1.3 5.2-3.9 0-2.6-1.8-3.8-5.2-3.8H28v7.7Z" fill="#E8C496"/>
+    <path d="M46 12c4.3 1.4 6.8 4.6 6.6 8.8-4.4.1-7.6-2.3-8.9-6.6L46 12Z" fill="#C97A2B"/>
+    </svg>
+    
